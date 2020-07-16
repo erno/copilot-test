@@ -16,7 +16,7 @@ source:
   properties:
     access_token_secret: github-token-coptest1-copilot-test.git
     branch: master
-    repository: https://github.com/erno/copilot-test.git
+    repository: https://github.com/erno/copilot-test
 
 # The deployment section defines the order the pipeline will deploy
 # to your environments.
