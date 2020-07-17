@@ -14,13 +14,18 @@ source:
   # the artifacts should be sourced from. For example, the GitHub provider
   # has the following properties: repository, branch.
   properties:
-    access_token_secret: github-token-coptest1-copilot-test.git
+    access_token_secret: github-token-coptest1-copilot-test
     branch: master
     repository: https://github.com/erno/copilot-test
 
 # The deployment section defines the order the pipeline will deploy
 # to your environments.
 stages:
+    - # The name of the environment to deploy to.
+      name: prod
+      # Optional: use test commands to validate this stage of your build.
+      # test_commands: [echo 'running tests', make test]
+
     - # The name of the environment to deploy to.
       name: test
       # Optional: use test commands to validate this stage of your build.

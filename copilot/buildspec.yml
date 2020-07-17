@@ -43,6 +43,7 @@ phases:
             timestamp=$(date +%s)
             aws s3 cp "$ADDONSFILE" "s3://stackset-coptest1-infras-pipelinebuiltartifactbuc-1rrwk2n3lyx2t/manual/$timestamp/$svc.addons.stack.yml";
             jq --arg a "https://stackset-coptest1-infras-pipelinebuiltartifactbuc-1rrwk2n3lyx2t.s3-eu-west-3.amazonaws.com/manual/$timestamp/$svc.addons.stack.yml" '.Parameters.AddonsTemplateURL = $a' ./infrastructure/$svc-test.params.json > "$tmp" && mv "$tmp" ./infrastructure/$svc-test.params.json
+            jq --arg a "https://stackset-coptest1-infras-pipelinebuiltartifactbuc-1rrwk2n3lyx2t.s3-eu-west-3.amazonaws.com/manual/$timestamp/$svc.addons.stack.yml" '.Parameters.AddonsTemplateURL = $a' ./infrastructure/$svc-prod.params.json > "$tmp" && mv "$tmp" ./infrastructure/$svc-prod.params.json
           fi
         done;
       # Build images
